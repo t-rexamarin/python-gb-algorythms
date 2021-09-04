@@ -19,4 +19,3 @@ try:
 except IndexError:
     err_msg = f'В алфавите нет буквы под номером {my_letter}. Диапазон от 1 до {len(letters_arr)}.'
     print(err_msg)
-
