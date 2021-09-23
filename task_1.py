@@ -18,8 +18,6 @@ def my_sort(array: list):
         for i in range(len(array) - n):
             if array[i] > array[i + 1]:
                 array[i], array[i + 1] = array[i + 1], array[i]
-                # array[i] = array[i + 1]
-                # array[i + 1] = array[i]
 
         n += 1
 
@@ -27,13 +25,3 @@ def my_sort(array: list):
 
 
 print(my_sort(numbers))
-
-#
-# li = [5,2,7,4,0,9,8,6]
-# n = 1
-# while n < len(li):
-#      for i in range(len(li)-n):
-#           if li[i] > li[i+1]:
-#                li[i],li[i+1] = li[i+1],li[i]
-#      n += 1
-# print(li)

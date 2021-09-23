@@ -2,10 +2,12 @@
 #   заданный случайными числами на промежутке [0; 50).
 # Выведите на экран исходный и отсортированный массивы.
 
+# подсмотрел в одной статье
+
 from random import randint, seed
 
 seed(3)
-numbers = [randint(0, 50) for i in range(4)]
+numbers = [randint(0, 50) for i in range(20)]
 print(numbers)
 
 
@@ -43,6 +45,7 @@ def merge_sort(array: list):
             rp += 1
             i += 1
 
+    return array
+
 
 print(merge_sort(numbers))
-print(numbers)
