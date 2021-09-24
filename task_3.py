@@ -48,14 +48,16 @@ def median_var_1(array):
     return median
 
 
-# вариант 2
+# вариант 2 - не закончен
+# не хватило время подумать как разрулить ситуацию, когда less != more
+# думал-думал, но ничего толкового не придумал быстро
 def median_var_2(array):
     # брать значение и смотреть сколько больше сколько меньше, и если они равны
     # median = array[0]
     # count_stop = len(array) // 2
     # i_count_more = 0
-    i_count_less = 0
-
+    # i_count_less = 0
+    #
     # for i in array[1:]:
     #     for t in array[1:]:
     #         if i_count_more <= count_stop and i_count_less <= count_stop:
@@ -66,22 +68,13 @@ def median_var_2(array):
     #         elif i_count_more > count_stop or i_count_less > count_stop:
     #             i_count_more = 0
     #             i_count_less = 0
-    #         # elif i_count_more == count_stop == i_count_less:
-    #         #     return i
     #
     #         if i_count_more == count_stop == i_count_less:
     #                 # print(f'median {i}')
     #                 # iter_stop = 1
     #             return i
-    # #         # break
     #
     #     median = i
-
-
-
-
-    # print(i, i_count_more, i_count_less)
-    # med_idx = len(array) // 2
 
     for i in array:
         less = [n for n in array if n < i]
@@ -99,12 +92,12 @@ def median_var_2(array):
         # print(len_less, len_more, len_eq)
         if len(less) == len(more):
             return i
-        elif len(less) < len(more) and len(less) + (len(equal) - 1) == len(more):
+        # если в массив1 меньше массива2, значит что медиана находится в массиве2
+        elif len(less) < len(more):
+            # если вызову median_var_2(more), то получу медиану от more, а не от всего списка
+            median_var_2()
+        elif len(more) < len(less):
             return i
-        elif len(more) < len(less) and len(more) + (len(equal) - 1) == len(less):
-            return i
-        else:
-            print(i, len_less, len_more, len_eq)
 
 
 print(median_var_1(numbers))
